@@ -16,10 +16,8 @@ function TestStore(props) {
 
   const renderItem = (item, i) => (
     <li className="list-group-item justify-content-between" key={i}>
-      <div>
-        <span className="badge badge-primary" style={{width: 100}}>{item.type}</span>
-        <span className="name" style={{padding: '0 10px'}}>{item.title}</span>
-      </div>
+      <span className="badge badge-primary store-type">{item.type}</span>
+      <span className="name">{item.title}</span>
       <span className="cost">£{item.cost.toFixed(2)}</span>
     </li>
   )

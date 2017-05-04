@@ -4,3 +4,15 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
+
+.bill-group {
+  margin: 40px 0;
+}
+
+.package-type {
+  width: 75px;
+}
+
+.store-type {
+  width: 100px;
+}

@@ -4,10 +4,8 @@ import BillGroup from './BillGroup'
 function PackageCharges(props) {
   const renderItem = (item) => (
     <li className="list-group-item justify-content-between" key={item.name}>
-      <div>
-        <span className="badge badge-primary" style={{width: 100}}>{item.type}</span>
-        <span className="name" style={{padding: '0 10px'}}>{item.name}</span>
-      </div>
+      <span className="badge badge-primary package-type">{item.type}</span>
+      <span className="name">{item.name}</span>
       <span className="cost">£{item.cost.toFixed(2)}</span>
     </li>
   )

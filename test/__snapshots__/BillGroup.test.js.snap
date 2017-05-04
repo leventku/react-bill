@@ -6,7 +6,7 @@ exports[`BillGroup component should render its items 1`] = `
 >
   <h2>
     Some title
-     £
+    : £
     123.00
   </h2>
   <div

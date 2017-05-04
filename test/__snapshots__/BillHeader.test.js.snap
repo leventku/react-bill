@@ -7,22 +7,22 @@ exports[`BillHeader component should render its items 1`] = `
   <h1>
     Your Sky Bill
   </h1>
-  <h3>
+  <h5>
     Issue Date: 
-    1
-  </h3>
-  <h3>
+    01 Jan 1970
+  </h5>
+  <h5>
     Due Date: 
-    2
-  </h3>
-  <h3>
+    01 Jan 1970
+  </h5>
+  <h5>
     Bill Period: 
-    3
+    01 Jan 1970
      - 
-    4
-  </h3>
+    01 Jan 1970
+  </h5>
   <h2>
-    Monthly Total: 
+    Month Total: £
     5
   </h2>
 </div>

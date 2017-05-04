@@ -25,7 +25,7 @@ export default class BillGroup extends Component {
   render() {
     return (
       <div className="bill-group">
-        <h2>{this.props.title} £{this.props.total.toFixed(2)}</h2>
+        <h2>{this.props.title}: £{this.props.total.toFixed(2)}</h2>
         <div className="bill-list-container">
           <ul className="list-group">
             {
