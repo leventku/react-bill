@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import axios from 'axios';
 
 import BillHeader from './BillHeader';
-import BillGroup from './BillGroup';
+import PackageCharges from './PackageCharges';
 import CallCharges from './CallCharges';
 import SkyStore from './SkyStore';
 
@@ -23,49 +23,27 @@ class App extends Component {
       })
   }
 
-  renderPackageItem = (item) => (
-    <li className="list-group-item justify-content-between" key={item.name}>
-      <div>
-        <span className="badge badge-primary" style={{width: 100}}>{item.type}</span>
-        <span className="name" style={{padding: '0 10px'}}>{item.name}</span>
-      </div>
-      <span className="cost">£{item.cost.toFixed(2)}</span>
-    </li>
-  )
-
-  renderSkyStoreItem = (item, i) => (
-    <li className="list-group-item justify-content-between" key={i}>
-      <div>
-        <span className="badge badge-primary" style={{width: 100}}>{item.type}</span>
-        <span className="name" style={{padding: '0 10px'}}>{item.title}</span>
-      </div>
-      <span className="cost">£{item.cost.toFixed(2)}</span>
-    </li>
-  )
-
   render() {
     if(this.state.data === null) {
       return (<h1>Loading...</h1>)
     }
+    
+    const {statement, total, package: packageData, callCharges, skyStore} = this.state.data;
 
     return (
       <div className="App container">
         <BillHeader 
-          details={ this.state.data.statement } 
-          total={this.state.data.total}
+          details={statement} 
+          total={total}
         />
-        <BillGroup
-          title="Your Package"
-          items={this.state.data.package.subscriptions}
-          itemRenderer={this.renderPackageItem}
-          total={this.state.data.package.total} 
+        <PackageCharges
+          data={packageData}
         />
         <CallCharges
-          data={this.state.data.callCharges}
+          data={callCharges}
         />
-
         <SkyStore 
-          data={this.state.data.skyStore}
+          data={skyStore}
         />
       </div>
     );
