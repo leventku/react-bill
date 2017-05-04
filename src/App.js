@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import axios from 'axios';
 
-import BillGroup from './BillGroup';
 import BillHeader from './BillHeader';
+import BillGroup from './BillGroup';
+import CallCharges from './CallCharges';
 import SkyStore from './SkyStore';
 
 class App extends Component {
@@ -28,14 +29,6 @@ class App extends Component {
         <span className="badge badge-primary" style={{width: 100}}>{item.type}</span>
         <span className="name" style={{padding: '0 10px'}}>{item.name}</span>
       </div>
-      <span className="cost">£{item.cost.toFixed(2)}</span>
-    </li>
-  )
-
-  renderCallItem = (item, i) => (
-    <li className="list-group-item justify-content-between" key={i}>
-      <span className="number" style={{width: 100}}>{item.called}</span>
-      <span className="duration">{item.duration}</span>
       <span className="cost">£{item.cost.toFixed(2)}</span>
     </li>
   )
@@ -67,11 +60,8 @@ class App extends Component {
           itemRenderer={this.renderPackageItem}
           total={this.state.data.package.total} 
         />
-        <BillGroup
-          title="Call Charges"
-          items={this.state.data.callCharges.calls}
-          itemRenderer={this.renderCallItem}
-          total={this.state.data.callCharges.total} 
+        <CallCharges
+          data={this.state.data.callCharges}
         />
 
         <SkyStore 
