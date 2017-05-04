@@ -21,6 +21,16 @@ class App extends Component {
       })
   }
 
+  renderPackageItem = (item) => (
+    <li className="list-group-item justify-content-between" key={item.name}>
+      <div>
+        <span className="badge badge-primary" style={{width: 100}}>{item.type}</span>
+        <span className="name" style={{padding: '0 10px'}}>{item.name}</span>
+      </div>
+      <span className="cost">£{item.cost.toFixed(2)}</span>
+    </li>
+  )
+
   renderCallItem = (item, i) => (
     <li className="list-group-item justify-content-between" key={i}>
       <span className="number" style={{width: 100}}>{item.called}</span>
@@ -38,6 +48,12 @@ class App extends Component {
         <BillHeader 
           details={ this.state.data.statement } 
           total={this.state.data.total}
+        />
+        <BillGroup
+          title="Your Package"
+          items={this.state.data.package.subscriptions}
+          itemRenderer={this.renderPackageItem}
+          total={this.state.data.package.total} 
         />
         <BillGroup
           title="Call Charges"
