@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BillHeader component should render its items 1`] = `
+<div
+  className="bill-header jumbotron"
+>
+  <h1>
+    Your Sky Bill
+  </h1>
+  <h3>
+    Issue Date: 
+    1
+  </h3>
+  <h3>
+    Due Date: 
+    2
+  </h3>
+  <h3>
+    Bill Period: 
+    3
+     - 
+    4
+  </h3>
+  <h2>
+    Monthly Total: 
+    5
+  </h2>
+</div>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BillGroup component should render its items 1`] = `
+<div
+  className="bill-group"
+>
+  <h2>
+    Some title
+     £
+    123.00
+  </h2>
+  <div
+    className="bill-list-container"
+  >
+    <ul
+      className="list-group"
+    />
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
+    >
+      Show All
+    </button>
+  </div>
+</div>
+`;

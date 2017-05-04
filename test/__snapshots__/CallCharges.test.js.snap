@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CallCharges component should render its items 1`] = `
+<BillGroup
+  itemRenderer={[Function]}
+  items={
+    Array [
+      Object {
+        "called": "1",
+        "cost": 3,
+        "duration": "2",
+      },
+      Object {
+        "called": "2",
+        "cost": 3,
+        "duration": "2",
+      },
+      Object {
+        "called": "3",
+        "cost": 3,
+        "duration": "2",
+      },
+    ]
+  }
+  title="Call Charges"
+/>
+`;

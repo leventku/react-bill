@@ -6,8 +6,9 @@ function TestStore(props) {
   const prepareItems = (data) => {
     let allItems = [];
     Object.keys(data).filter( key => key !== 'total').forEach( category => {
+      const formattedCategory = category == 'buyAndKeep' ? 'buy and keep' : category;
       data[category].forEach(item => {
-        allItems.push(Object.assign({type: category}, item))
+        allItems.push(Object.assign({ type: formattedCategory }, item))
       })
     })
     return allItems;

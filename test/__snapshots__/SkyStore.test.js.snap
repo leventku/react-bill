@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkyStore component should render its items 1`] = `
+<BillGroup
+  itemRenderer={[Function]}
+  items={
+    Array [
+      Object {
+        "cost": 4.99,
+        "title": "50 Shades of Grey",
+        "type": "rentals",
+      },
+      Object {
+        "cost": 9.99,
+        "title": "That's what she said",
+        "type": "buy and keep",
+      },
+      Object {
+        "cost": 9.99,
+        "title": "Brokeback mountain",
+        "type": "buy and keep",
+      },
+    ]
+  }
+  title="Sky Store"
+  total={24.97}
+/>
+`;

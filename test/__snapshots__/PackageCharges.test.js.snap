@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PackageCharges component should render its items 1`] = `
+<BillGroup
+  itemRenderer={[Function]}
+  items={
+    Array [
+      Object {
+        "cost": 50,
+        "name": "Variety with Movies HD",
+        "type": "tv",
+      },
+    ]
+  }
+  title="Your Package"
+/>
+`;
