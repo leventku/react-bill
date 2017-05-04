@@ -13,7 +13,6 @@ export default class BillGroup extends Component {
 
   toggleShowAll = () => {
     this.setState((prevState) => {
-
       if (prevState.visibleRows === prevState.minVisible) {
         return {visibleRows: prevState.maxVisible}
       }
@@ -27,7 +26,7 @@ export default class BillGroup extends Component {
     return (
       <div className="bill-group">
         <h2>{this.props.title} £{this.props.total.toFixed(2)}</h2>
-        <div className="call-charges">
+        <div className="bill-list-container">
           <ul className="list-group">
             {
               this.props.items.slice(0, this.state.visibleRows).map(this.props.itemRenderer)
