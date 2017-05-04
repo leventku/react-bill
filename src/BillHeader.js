@@ -7,7 +7,7 @@ export default ({ details: { generated, due, period }, total }) => {
       <h3>Issue Date: {generated}</h3>
       <h3>Due Date: {due}</h3>
       <h3>Bill Period: {period.from} - {period.to}</h3>
-      <h3>Monthly Total: {total}</h3>
+      <h2>Monthly Total: {total}</h2>
     </div>
   )
 }
