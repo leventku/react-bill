@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 import BillHeader from './BillHeader';
@@ -15,25 +15,25 @@ class App extends Component {
 
   componentDidMount() {
     axios.get('https://still-scrubland-9880.herokuapp.com/bill.json')
-      .then(response => {
-        this.setState({data: response.data})
+      .then((response) => {
+        this.setState({ data: response.data });
       })
       .catch((ex) => {
-        console.log('parsing failed', ex)
-      })
+        console.error('parsing failed', ex);
+      });
   }
 
   render() {
-    if(this.state.data === null) {
-      return (<h1>Loading...</h1>)
+    if (this.state.data === null) {
+      return (<h1>Loading...</h1>);
     }
-    
-    const {statement, total, package: packageData, callCharges, skyStore} = this.state.data;
+
+    const { statement, total, package: packageData, callCharges, skyStore } = this.state.data;
 
     return (
       <div className="App container">
-        <BillHeader 
-          details={statement} 
+        <BillHeader
+          details={statement}
           total={total}
         />
         <PackageCharges
@@ -42,7 +42,7 @@ class App extends Component {
         <CallCharges
           data={callCharges}
         />
-        <SkyStore 
+        <SkyStore
           data={skyStore}
         />
       </div>

@@ -1,18 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import BillGroup from './BillGroup';
 
-function TestStore(props) {
+function SkyStore(props) {
   const prepareItems = (data) => {
-    let allItems = [];
-    Object.keys(data).filter( key => key !== 'total').forEach( category => {
-      const formattedCategory = category == 'buyAndKeep' ? 'buy and keep' : category;
-      data[category].forEach(item => {
-        allItems.push(Object.assign({ type: formattedCategory }, item))
-      })
-    })
+    const allItems = [];
+    Object.keys(data).filter(key => key !== 'total').forEach((category) => {
+      const formattedCategory = category === 'buyAndKeep' ? 'buy and keep' : category;
+      data[category].forEach((item) => {
+        allItems.push(Object.assign({ type: formattedCategory }, item));
+      });
+    });
     return allItems;
-  }
+  };
 
   const renderItem = (item, i) => (
     <li className="list-group-item justify-content-between" key={i}>
@@ -20,16 +21,22 @@ function TestStore(props) {
       <span className="name">{item.title}</span>
       <span className="cost">£{item.cost.toFixed(2)}</span>
     </li>
-  )
+  );
 
   return (
-    <BillGroup 
+    <BillGroup
       title="Sky Store"
       items={prepareItems(props.data)}
       itemRenderer={renderItem}
       total={props.data.total}
     />
-  )
+  );
 }
 
-export default TestStore;
+SkyStore.propTypes = {
+  data: PropTypes.shape({
+    total: PropTypes.number,
+  }).isRequired,
+};
+
+export default SkyStore;

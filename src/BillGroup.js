@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 export default class BillGroup extends Component {
   constructor(props) {
@@ -7,19 +9,18 @@ export default class BillGroup extends Component {
     this.state = {
       minVisible,
       maxVisible: props.items.length,
-      visibleRows: minVisible
-    }
+      visibleRows: minVisible,
+    };
   }
 
   toggleShowAll = () => {
     this.setState((prevState) => {
       if (prevState.visibleRows === prevState.minVisible) {
-        return {visibleRows: prevState.maxVisible}
+        return { visibleRows: prevState.maxVisible };
       }
-      else {
-        return {visibleRows: prevState.minVisible}
-      }
-    })
+
+      return { visibleRows: prevState.minVisible };
+    });
   }
 
   render() {
@@ -32,11 +33,18 @@ export default class BillGroup extends Component {
               this.props.items.slice(0, this.state.visibleRows).map(this.props.itemRenderer)
             }
           </ul>
-          <button onClick={this.toggleShowAll} style={{display: this.state.maxVisible > this.state.minVisible ? 'inline-block': 'none'}}>
-            {this.state.visibleRows === this.state.minVisible ? 'Show All': 'Show Less'}
+          <button onClick={this.toggleShowAll} style={{ display: this.state.maxVisible > this.state.minVisible ? 'inline-block' : 'none' }}>
+            {this.state.visibleRows === this.state.minVisible ? 'Show All' : 'Show Less'}
           </button>
         </div>
       </div>
-    )
+    );
   }
 }
+
+BillGroup.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string.isRequired,
+  total: PropTypes.number.isRequired,
+  itemRenderer: PropTypes.func.isRequired,
+};
