@@ -7,28 +7,28 @@ import PackageCharges from '../src/PackageCharges';
 function setupComponent() {
   const props = {
     data: {
-      "subscriptions": [
-        { "type": "tv", "name": "Variety with Movies HD", "cost": 50.00 }
+      subscriptions: [
+        { type: 'tv', name: 'Variety with Movies HD', cost: 50.00 },
       ],
-    }
-  }
+    },
+  };
 
-  const wrapper = shallow(<PackageCharges {...props} />)
+  const wrapper = shallow(<PackageCharges {...props} />);
 
-  return  {
+  return {
     props,
-    wrapper
-  }
+    wrapper,
+  };
 }
 
 describe('PackageCharges component', () => {
   it('should render', () => {
-    const {wrapper} = setupComponent();
+    const { wrapper } = setupComponent();
     expect(wrapper.exists()).toBe(true);
-  })
+  });
 
   it('should render its items', () => {
-    const {wrapper} = setupComponent();
+    const { wrapper } = setupComponent();
     expect(toJson(wrapper)).toMatchSnapshot();
-  })
-})
+  });
+});
